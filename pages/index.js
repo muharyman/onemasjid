@@ -108,7 +108,7 @@ export default function IndexPage() {
         <p className='font-sans font-bold text-black text-3xl'>
           Barang yang tersedia
         </p>
-        <div className='grid grid-cols-4 gap-4'>
+        <div className='mt-4 grid grid-cols-4 gap-4'>
           {daftarBarang.map((item, i) => (
             <div key={i} className='col-span-1'>
               <Card

@@ -4,13 +4,8 @@ import Image from "next/image";
 export default function Card(props) {
   return (
     <React.Fragment>
-      <div className='box p-2 w-full'>
-        <Image
-          src={props.gambar_barang}
-          width={100}
-          height={100}
-          alt='example'
-        />
+      <div className='box p-6 w-full flex flex-col justify-center'>
+        <img src={props.gambar_barang} alt='example' />
         <p className='font-sans text-black opacity-50 text-center'>
           {props.alamat}
         </p>
