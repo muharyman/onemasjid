@@ -1,14 +1,16 @@
-import Nav from '../components/nav'
+import React from "react";
+import Image from "next/image";
 
 export default function IndexPage() {
   return (
     <div>
-      <Nav />
-      <div className="py-20">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Next.js + Tailwind CSS 2.0
-        </h1>
+      <div className='pt-16'>
+        <img
+          className='h-screen w-full'
+          src='/images/homepage.png'
+          alt='home apge'
+        />
       </div>
     </div>
-  )
+  );
 }
