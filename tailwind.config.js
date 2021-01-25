@@ -6,6 +6,10 @@ module.exports = {
       colors: {
         "accent-1": "#333",
         "btn-blue-2": "#000055",
+        "blue-3": "#094AB2",
+      },
+      zIndex: {
+        "min-1": "-1",
       },
     },
   },

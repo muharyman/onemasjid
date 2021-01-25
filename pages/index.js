@@ -1,16 +1,139 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import Card from "../components/card";
 
 export default function IndexPage() {
+  const router = useRouter();
+  const pencarianRef = React.useRef();
+
+  const daftarBarang = React.useMemo(
+    () => [
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+      {
+        gambar_barang: "/images/example.png",
+        alamat: "Masjid Sunda Kelapa, Jakarta",
+        deskripsi_barang: "Kamera Black EOS Rebel T6",
+        harga: "Free",
+      },
+    ],
+    []
+  );
+
   return (
-    <div>
-      <div className='pt-16'>
+    <div className='pb-16'>
+      <div className='relative w-full'>
         <img
-          className='h-screen w-full'
+          className='h-screen w-full absolute z-min-1'
           src='/images/homepage.png'
-          alt='home apge'
+          alt='home page'
         />
+        <div className='flex flex-col space-y-2 h-screen justify-center items-center'>
+          <p className='font-sans font-bold text-blue-3 text-5xl capitalize'>
+            cari barang untuk dipinjam
+          </p>
+          <p className='font-sans font-light text-blue-3 text-lg capitalize'>
+            Temukan dan Pinjam
+          </p>
+          <div className='py-8 px-4 mx-auto box flex space-x-2 justify-between items-center h-8 w-2/3'>
+            <img
+              className='cursor-pointer'
+              src='/images/search.svg'
+              alt='search'
+              onClick={() => {
+                console.log("test");
+              }}
+            />
+            <input
+              className='w-full focus:outline-none bg-transparent text-xl'
+              type='text'
+              placeholder='Pencarian'
+              ref={pencarianRef}
+              onKeyDown={({ key }) => (key === "Enter" ? "" : null)}
+            />
+            <button className='focus:outline-none py-2 btn-search rounded-md px-6'>
+              <p className='text-white'>CARI</p>
+            </button>
+          </div>
+        </div>
       </div>
+      <div className='bg-white w-full mt-12 px-16'>
+        <p className='font-sans font-bold text-black text-3xl'>
+          Barang yang tersedia
+        </p>
+        <div className='grid grid-cols-4 gap-4'>
+          {daftarBarang.map((item, i) => (
+            <div key={i} className='col-span-1'>
+              <Card
+                gambar_barang={item.gambar_barang}
+                alamat={item.alamat}
+                deskripsi_barang={item.deskripsi_barang}
+                harga={item.harga}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <style jsx>
+        {`
+          .box {
+            background: #f5f5f7;
+            border-radius: 32px;
+          }
+          .btn-search {
+            background: #3838d0;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 23px;
+          }
+        `}
+      </style>
     </div>
   );
 }
