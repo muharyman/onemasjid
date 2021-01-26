@@ -2,10 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Card from "../components/card";
+import AppContext from "../context/appContext";
+import { gql } from "graphql-request";
 
 export default function IndexPage() {
   const router = useRouter();
   const pencarianRef = React.useRef();
+  const { client } = React.useContext(AppContext);
 
   const daftarBarang = React.useMemo(
     () => [
@@ -66,6 +69,25 @@ export default function IndexPage() {
     ],
     []
   );
+
+  const fetchData = React.useCallback(async () => {
+    const query = gql`
+      query Myquery {
+        user {
+          nama_depan
+          nama_belakang
+          email
+          passowrd
+        }
+      }
+    `;
+    const { user } = await client.request(query);
+    console.log(user);
+  }, [client]);
+
+  React.useEffect(() => {
+    fetchData();
+  }, [client]);
 
   return (
     <div className='pb-16'>
