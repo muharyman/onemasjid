@@ -1,6 +1,9 @@
 import React from "react";
 import CardProfile from "../../components/cardProfile";
+import AppContext from "../../context/appContext";
 export default function Detail() {
+  const { setSnack } = React.useContext(AppContext);
+
   return (
     <React.Fragment>
       <div className='pt-24 pb-4 px-8'>
@@ -51,7 +54,12 @@ export default function Detail() {
                   />
                 </div>
                 <div className='mt-4'>
-                  <button className='bg-blue-800 rounded-lg px-6 py-4 flex mx-auto justify-center items-center text-white'>
+                  <button
+                    onClick={() =>
+                      setSnack("Request berhasil diajukan", "success")
+                    }
+                    className='focus:outline-none hover:bg-opacity-80 bg-blue-800 rounded-lg px-6 py-4 flex mx-auto justify-center items-center text-white'
+                  >
                     REQUEST
                   </button>
                 </div>

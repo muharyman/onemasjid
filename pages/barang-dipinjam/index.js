@@ -1,8 +1,9 @@
 import React from "react";
-
+import AppContext from "../../context/appContext";
 export default function ListPinjam() {
   const [open, setOpen] = React.useState();
   const [data, setData] = React.useState();
+  const { setSnack } = React.useContext(AppContext);
   const daftarBarang = React.useMemo(
     () => [
       {
@@ -141,7 +142,15 @@ export default function ListPinjam() {
                           {data.status}
                         </p>
                         {data.status === "Belum dikembalikan" ? (
-                          <button className='bg-blue-800 rounded-lg px-6 py-4 flex mx-auto justify-center items-center text-white'>
+                          <button
+                            onClick={() =>
+                              setSnack(
+                                "Peminjam akan diingatkan kembali",
+                                "success"
+                              )
+                            }
+                            className='bg-blue-800 rounded-lg px-6 py-4 flex mx-auto justify-center items-center text-white'
+                          >
                             Ingatkan
                           </button>
                         ) : null}
