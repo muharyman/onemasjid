@@ -24,7 +24,7 @@ Other things to include:
   - **Technology stack**: 
       ### Server/Backend and Database
       *Tools:* [hasura](https://hasura.io/)
-      *Database:* GraphQL
+      *Database:* Postgresql
 
       ### Web/Frontend
       *Language:* JavaScript  
@@ -39,9 +39,9 @@ Other things to include:
   - **Links to production or demo instances** : TBD
 
 
-**Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
+**Screenshot**: Tampilan awal dari website,
 
-![](https://github.com/muharyman/onemasjid/blob/main/public/images/homepage.png)
+![](https://github.com/muharyman/onemasjid/blob/main/MockUp/HomePage.png)
 
 
 ## Dependencies
@@ -97,7 +97,6 @@ Informasi umum bagaimana cara berkontribusibisa ke link [CONTRIBUTING](CONTRIBUT
 ## Open source licensing info
 1. [TERMS](TERMS.md)
 2. [LICENSE](LICENSE)
-3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
 
 
 ----
