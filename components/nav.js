@@ -210,20 +210,6 @@ export default function Nav() {
                     </div>
                   </Input>
 
-                  <div className='mt-4 flex items-center'>
-                    <p className='mx-2 font-sans text-black'>
-                      Dengan mendaftar, Saya setuju dengan{" "}
-                      <span className='font-sans text-blue-700 font-bold'>
-                        <Link href='#'>{`Syarat & Ketentuan`}</Link>
-                      </span>{" "}
-                      dan{" "}
-                      <span className='font-sans text-blue-700 font-bold'>
-                        <Link href='#'>Kebijakan Privasi</Link>
-                      </span>{" "}
-                      dari One Masjid
-                    </p>
-                  </div>
-
                   <button
                     // onClick={() =>
                     //   handleRegister(
