@@ -126,19 +126,8 @@ export default function ListPinjam() {
 
                 {data ? (
                   <div className='mt-8 space-y-2'>
-                    {data.peringatan1 || data.peringatan2 ? (
-                      <p>Peringatan :</p>
-                    ) : null}
-                    {data.peringatan1 ? (
-                      <p className='font-sans font-bold text-red-500'>
-                        {data.peringatan1}
-                      </p>
-                    ) : null}
-                    {data.peringatan2 ? (
-                      <p className='font-sans font-bold text-red-500'>
-                        {data.peringatan2}
-                      </p>
-                    ) : null}
+                    <p>Digunakan pada :</p>
+                    <p className='font-sans text-red-500'>{data.tanggal}</p>
 
                     {data ? (
                       <div className='flex justify-between space-x-1'>
