@@ -39,22 +39,9 @@ Other things to include:
   - **Links to production or demo instances** : TBD
 
 
-**Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
+**Screenshot**: Tampilan awal dari website,
 
-*Tampilan Awal
 ![](https://github.com/muharyman/onemasjid/blob/main/MockUp/HomePage.png)
-
-*Tampilan Hasil Cari
-![](https://github.com/muharyman/onemasjid/blob/main/MockUp/SearchResultPage.png)
-
-*Tampilan List Pinjam
-![](https://github.com/muharyman/onemasjid/blob/main/MockUp/ListPinjamPage.png)
-
-*Tampilan List Dipinjam
-![](https://github.com/muharyman/onemasjid/blob/main/MockUp/ListDipinjamPage.png)
-
-*Tampilan Pinjam
-![](https://github.com/muharyman/onemasjid/blob/main/MockUp/BorrowPage.png)
 
 
 ## Dependencies
