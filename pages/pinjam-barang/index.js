@@ -3,11 +3,17 @@ import Card from "../../components/card";
 import { useRouter } from "next/router";
 
 export default function Index() {
+  const {
+    query: { barang },
+  } = useRouter();
+
   const router = useRouter();
 
   const toDetail = React.useCallback((id) => {
     router.push(`/pinjam-barang/${id}`);
   }, []);
+
+  const { query } = useRouter();
 
   const daftarBarang = React.useMemo(
     () => [
@@ -79,9 +85,15 @@ export default function Index() {
   );
   return (
     <div className='bg-white w-full pt-20 pb-12 px-16'>
-      <p className='font-sans font-bold text-black text-3xl'>
-        Barang yang tersedia
-      </p>
+      {!barang ? (
+        <p className='font-sans font-bold text-black text-3xl'>
+          Barang yang tersedia
+        </p>
+      ) : (
+        <p className='font-sans font-bold text-black text-3xl'>
+          {`Hasil Pencarian : ${barang}`}
+        </p>
+      )}
       <div className='mt-4 grid grid-cols-4 gap-4'>
         {daftarBarang.map((item, i) => (
           <div key={i} className='col-span-1' onClick={() => toDetail(item.id)}>

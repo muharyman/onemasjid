@@ -131,9 +131,22 @@ export default function IndexPage() {
               type='text'
               placeholder='Pencarian'
               ref={pencarianRef}
-              onKeyDown={({ key }) => (key === "Enter" ? "" : null)}
+              onKeyDown={({ key }) =>
+                key === "Enter"
+                  ? router.push(
+                      `/pinjam-barang?barang=${pencarianRef.current.value}`
+                    )
+                  : null
+              }
             />
-            <button className='focus:outline-none py-2 btn-search rounded-md px-6'>
+            <button
+              onClick={() =>
+                router.push(
+                  `/pinjam-barang?barang=${pencarianRef.current.value}`
+                )
+              }
+              className='focus:outline-none py-2 btn-search rounded-md px-6'
+            >
               <p className='text-white'>CARI</p>
             </button>
           </div>
