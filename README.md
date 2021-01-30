@@ -1,74 +1,107 @@
-# onemasjid-website
-This is the front end code for [onemasjid](https://onemasjid.herokuapp.com). It is built atop the Yii 2 MVC framework.
+# OneMasjid-website
 
-The top level structure is divided into application code (in the `application` folder) that includes MVC code and the `public` folder which contains `index.php`, `css`, `js`, and others. 
+**Description**:  OneMasjid adalah website Sharing Asset berbasis Komunitas untuk saling pinjam-meminjam barang antar Masjid. Sebuah website yang digunakan untuk dkm masjid untuk meminjam barang kepada masjid lain untuk memenuhi kebutuhan suatu acara masjid dan untuk meminjamkan barang kepada masjid lain.
 
-Your webserver should point to the public folder. The Yii framework code needs to reside on the machine as well; its location is hardcoded into `public/index.php`.
+Masalah yang diselesaikan OneMasjid:
+* Tidak adanya kelengkapan barang yang dibutuhkan masjid untuk acara-acara sesaat
+* Barang-barang inventaris masjid yang jarang digunakan mengendap di Gudang masjid sehingga dapat menjadi rusak dan menjadi sampah (aset yang mengendap)
+* Mahalnya biaya membeli barang-barang yang penggunaannya hanya sesekali dalam kurun periode yang lama seperti speaker, toa, kursi dalam jumlah banyak
 
-Under the `application` folder, here are the important locations:
+Bagaimana website bekerja dalam menyelesaikan masalah: Website membuat ekosistem yang menjembatani interaksi saling tolong-menolong(ta'awun) dalam pinjam barang antar masjid agar antar masjid dapat memenuhi kelengkapan barang ketika ada acara dan mengurangi biaya membeli barang-barang yang dibutuhkan. Serta bagi masjid yang memiliki barang, dapat mengoptimalkan penggunaan barang dan dapat membantu masjid lain dalam melengkapi kelengkapan barangnya
 
-* `config/main.php` : All the configuration options, including URL routes, database connections, etc.
-* Yii divides its MVC code into "modules" that share code. Think of them as sections of a website. For example, an admin section vs. a public section. 
-* `modules/front/controllers`: All controller classes. There are three main controllers: the search page, the index and sitewide pages, and the collection controller which includes actions for displaying collections, books, and ahadith.
-* `modules/front/models`: All model classes. Each kind of object has a model class. E.g. hadith, book, collection.
-* `modules/front/views`: Each controller has actions which have view code. This folder contains the view code.
-* `modules/front/views/layouts`: Other view code corresponding to side menus, search box, widgets, etc.
-* `views/layouts`: Sitewide view code like column layout, footer.
+Bagaimana peminjam menggunakan website:
+1. Peminjam masuk ke dalam website mencari benda yang ingin digunakan
+2. Peminjam melihat barang yang sesuai dengan kebutuhan
+3. Peminjam meminjam
+4. Pemilik barang menyetujui
+5. Pemilik barang mengirim barang tersebut
+6. Peminjam mengembalikan barang
+7. Peminjam membayar uph pinjam (jika ada upahnya)
+8. Pemilik menerima barangnya kembali
+
+Other things to include:
+
+  - **Technology stack**: 
+      ### Server/Backend and Database
+      *Tools:* [hasura](https://hasura.io/)
+      *Database:* GraphQL
+
+      ### Web/Frontend
+      *Language:* JavaScript  
+      *Package management:* NPM 
+      
+      
+      *Frameworks:*
+      * [nextjs](https://nextjs.org/)
+      * [tailwindcss](https://tailwindcss.com)
+
+  - **Status**:  Alpha (1.0.0) [CHANGELOG](CHANGELOG.md).
+  - **Links to production or demo instances** : TBD
 
 
-## Running on Windows
+**Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
 
-* Install PHP 7.3
-* Create an IIS website and point it to the `public` folder
-* Add the `index.php` file as default document
-* Add handler mapping for `.php` files in iis
-* Download and install [MySQL for Windows](https://dev.mysql.com/downloads/windows/)
-* Import the sample db in MySQL
-* Download and install [Composer](https://getcomposer.org/download/)
-* Run the `install` comand of composer in the root dir
-* Visit localhost in a browser to see the site running   
+![](https://raw.githubusercontent.com/cfpb/open-source-project-template/master/screenshot.png)
 
 
-## Working with the Dev Container
-If you don't want to set up a complete dev environment on your host, you can use a Docker container to host the PHP environment, dependencies, and web server. The source code is mounted as a volume inside the container, so any changes will reflect immediately inside the container without having to rebuild it.
+## Dependencies
 
-Launching the dev container is composed of a simple `docker-compose` command. First however, copy the `.env.local.sample` file to `.env.local` (**important**). Then run the following command in the same directory as the Dockerfile:
+TBD
 
-`docker-compose up --build`
+## Installation
 
-You should then be able to access the webserver using port 80 on the container's host.
-
-Use [Visual Studio Code](https://code.visualstudio.com/) with [Remote Containers](https://code.visualstudio.com/docs/remote/containers) extensions to attach to running instance and try out changes rapidly.
-
-Use the [php cs fixer](https://marketplace.visualstudio.com/items?itemName=makao.phpcsfixer) extension for formatting code.
-
-# Tailwind CSS example
-
-This example is a basic starting point for using [Tailwind CSS](https://tailwindcss.com) with Next.js.
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Install it and run:
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+npm install
+npm run dev
 # or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+yarn
+yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Configuration
 
-## Notes
+TBD
 
-This example includes the following [PostCSS](https://github.com/postcss/postcss) plugins:
+## Usage
 
-- [tailwindcss](https://tailwindcss.com) - utility-first CSS framework
-- [autoprefixer](https://github.com/postcss/autoprefixer) - plugin to parse CSS and add vendor prefixes to CSS rules using values from [Can I Use](https://caniuse.com).
+TBD
 
-To control the generated stylesheet's filesize, this example uses Tailwind CSS' [`purge` option](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS.
+## How to test the software
+
+TBD
+
+klik pada bagian ini untuk mencoba menggunakan website [onemasjid](https://onemasjid.herokuapp.com)
+
+## Known issues
+
+TBD
+
+## Getting help
+
+TBD
+
+**Example**
+
+TBD
+
+## Getting involved
+
+Jika ingin berontribusi dalam pembangunan website ini kami masih dalam tahap awal dan mempersiapkan untuk melakukan testing sehingga untuk sekarang kami fokus pada pembuatan MVP terutama dalam tampilan dari setiap pagenya.
+
+Informasi umum bagaimana cara berkontribusibisa ke link [CONTRIBUTING](CONTRIBUTING.md).
+
+----
+
+## Open source licensing info
+1. [TERMS](TERMS.md)
+2. [LICENSE](LICENSE)
+3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
+
+
+----
+
+## Credits and references
+
+1. [sunnah.com](https://sunnah.com/)
