@@ -1,5 +1,5 @@
 # onemasjid-website
-This is the front end code for [onemassjid](https://onemasjid.herokuapp.com). It is built atop the Yii 2 MVC framework.
+This is the front end code for [onemasjid](https://onemasjid.herokuapp.com). It is built atop the Yii 2 MVC framework.
 
 The top level structure is divided into application code (in the `application` folder) that includes MVC code and the `public` folder which contains `index.php`, `css`, `js`, and others. 
 
