@@ -24,7 +24,7 @@ Other things to include:
   - **Technology stack**: 
       ### Server/Backend and Database
       *Tools:* [hasura](https://hasura.io/)
-      *Database:* GraphQL
+      *Database:* Postgresql
 
       ### Web/Frontend
       *Language:* JavaScript  
@@ -41,7 +41,20 @@ Other things to include:
 
 **Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
 
-![](https://github.com/muharyman/onemasjid/blob/main/public/images/homepage.png)
+*Tampilan Awal
+![](https://github.com/muharyman/onemasjid/blob/main/MockUp/HomePage.png)
+
+*Tampilan Hasil Cari
+![](https://github.com/muharyman/onemasjid/blob/main/MockUp/SearchResultPage.png)
+
+*Tampilan List Pinjam
+![](https://github.com/muharyman/onemasjid/blob/main/MockUp/ListPinjamPage.png)
+
+*Tampilan List Dipinjam
+![](https://github.com/muharyman/onemasjid/blob/main/MockUp/ListDipinjamPage.png)
+
+*Tampilan Pinjam
+![](https://github.com/muharyman/onemasjid/blob/main/MockUp/BorrowPage.png)
 
 
 ## Dependencies
