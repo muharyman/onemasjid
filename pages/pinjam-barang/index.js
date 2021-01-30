@@ -6,7 +6,7 @@ export default function Index() {
   const router = useRouter();
 
   const toDetail = React.useCallback((id) => {
-    router.push(`/pinjam/${id}`);
+    router.push(`/pinjam-barang/${id}`);
   }, []);
 
   const daftarBarang = React.useMemo(

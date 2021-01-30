@@ -15,12 +15,8 @@ export default function Nav() {
         href: "/",
       },
       {
-        text: "List Pinjam",
-        href: "/list-pinjam",
-      },
-      {
-        text: "Barang Pinjam",
-        href: "/barang-pinajm",
+        text: "Pinjam Barang",
+        href: "/pinjam-barang",
       },
     ],
     []

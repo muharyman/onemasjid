@@ -99,7 +99,7 @@ export default function IndexPage() {
   // }, [client]);
 
   const toDetail = React.useCallback((id) => {
-    router.push(`/pinjam/${id}`);
+    router.push(`/pinjam-barang/${id}`);
   }, []);
 
   return (
