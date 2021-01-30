@@ -3,13 +3,14 @@ import { useRouter } from "next/router";
 import React from "react";
 import ActiveLink from "./active-link";
 import MyDialog from "./mydialog";
-import AppContext from "../context/appContext";
+import NavMobile from "./nav-mobile";
 import Image from "next/image";
 import Input from "./input";
 
 export default function Nav() {
   const router = useRouter();
   const [item, setItem] = React.useState("");
+  const [open, setOpen] = React.useState(false);
   const emailLogin = React.useRef();
   const passwordLogin = React.useRef();
   const namaRegister = React.useRef();
@@ -40,15 +41,23 @@ export default function Nav() {
     []
   );
 
+  const handleClick = React.useCallback((text) => {
+    setOpen(false);
+    if (text === "login") {
+      setItem("login");
+    } else {
+      setItem("register");
+    }
+  }, []);
+
   return (
     <div>
-      {/* <NavMobile
+      <NavMobile
         open={open}
         active={router.pathname}
         getClose={setOpen}
         getItem={handleClick}
-        getLogout={handleLogout}
-      /> */}
+      />
       <div
         className={`root-nav fixed py-3 xl:px-8 px-6 h-16 w-full bg-white flex justify-between items-center z-40 `}
       >
@@ -87,6 +96,19 @@ export default function Nav() {
               <p className='text-btn-blue-2'>Login</p>
             </button>
           </div>
+        </div>
+        <div className='lg:hidden flex justify-between items-center w-full'>
+          <Link href='/'>
+            <a>
+              <img className='h-14' src='/images/logo.svg' />
+            </a>
+          </Link>
+          <img
+            className='cursor-pointer lg:hidden fill-current text-gray-900'
+            onClick={() => setOpen(!open)}
+            src='/images/ic-menu-bar.svg'
+            alt='menu'
+          />
         </div>
       </div>
 

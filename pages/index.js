@@ -111,23 +111,20 @@ export default function IndexPage() {
           alt='home page'
         />
         <div className='flex flex-col space-y-2 h-screen justify-center items-center'>
-          <p className='font-sans font-bold text-blue-3 text-5xl capitalize'>
+          <p className='font-sans font-bold text-blue-3 text-2xl md:text-3xl lg:text-5xl capitalize'>
             cari barang untuk dipinjam
           </p>
-          <p className='font-sans font-light text-blue-3 text-lg capitalize'>
+          <p className='font-sans font-light text-blue-3 text-md lg:text-lg capitalize'>
             Temukan dan Pinjam
           </p>
-          <div className='py-8 px-4 mx-auto box flex space-x-2 justify-between items-center h-8 w-2/3'>
+          <div className='py-8 px-4 mx-auto box flex space-x-2 justify-between items-center h-8 w-full lg:w-2/3'>
             <img
               className='cursor-pointer'
               src='/images/search.svg'
               alt='search'
-              onClick={() => {
-                console.log("test");
-              }}
             />
             <input
-              className='w-full focus:outline-none bg-transparent text-xl'
+              className='w-full focus:outline-none bg-transparent text-md lg:text-xl'
               type='text'
               placeholder='Pencarian'
               ref={pencarianRef}
@@ -152,11 +149,11 @@ export default function IndexPage() {
           </div>
         </div>
       </div>
-      <div className='bg-white w-full mt-12 px-16'>
-        <p className='font-sans font-bold text-black text-3xl'>
+      <div className='bg-white w-full mt-12 px-4 lg:px-16'>
+        <p className='font-sans font-bold text-black text-xl lg:text-3xl'>
           Barang yang tersedia
         </p>
-        <div className='mt-4 grid grid-cols-4 gap-4'>
+        <div className='mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4'>
           {daftarBarang.map((item, i) => (
             <div
               key={i}

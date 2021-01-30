@@ -6,8 +6,8 @@ export default function Detail() {
 
   return (
     <React.Fragment>
-      <div className='pt-24 pb-4 px-8'>
-        <div className='grid grid-cols-2 gap-4'>
+      <div className='pt-24 pb-4 px-4 lg:px-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
           <div className='col-span-1'>
             <div className='box flex justify-center items-center'>
               <img src='/images/example.png' />

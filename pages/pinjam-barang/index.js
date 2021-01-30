@@ -84,17 +84,17 @@ export default function Index() {
     []
   );
   return (
-    <div className='bg-white w-full pt-20 pb-12 px-16'>
+    <div className='bg-white w-full pt-20 pb-12 px-4 lg:px-16'>
       {!barang ? (
-        <p className='font-sans font-bold text-black text-3xl'>
+        <p className='font-sans font-bold text-black text-xl lg:text-3xl'>
           Barang yang tersedia
         </p>
       ) : (
-        <p className='font-sans font-bold text-black text-3xl'>
+        <p className='font-sans font-bold text-black text-xl lg:text-3xl'>
           {`Hasil Pencarian : ${barang}`}
         </p>
       )}
-      <div className='mt-4 grid grid-cols-4 gap-4'>
+      <div className='mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4'>
         {daftarBarang.map((item, i) => (
           <div key={i} className='col-span-1' onClick={() => toDetail(item.id)}>
             <Card

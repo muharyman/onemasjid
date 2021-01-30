@@ -55,9 +55,9 @@ export default function ListPinjam() {
 
   return (
     <React.Fragment>
-      <div className='pt-20 pb-4 px-16'>
-        <div className='flex justify-between items-start space-x-2'>
-          <div className='w-7/12'>
+      <div className='pt-20 pb-4 px-4 lg:px-16'>
+        <div className='flex flex-col lg:flex-row justify-between items-start space-x-0 lg:space-x-2 lg:space-y-0 space-y-2'>
+          <div className='w-full lg:w-7/12'>
             <p className='font-sans font-bold text-xl'>List Pinjam</p>
             <div className='mt-8 flex flex-col space-y-2'>
               {daftarBarang.map((item, i) => (
@@ -66,7 +66,7 @@ export default function ListPinjam() {
                   onClick={() => setOpen(item.id)}
                   className={`${
                     open === item.id ? "bg-gray-200" : ""
-                  } cursor-pointer box p-6 w-full grid grid-cols-3 gap-2`}
+                  } cursor-pointer box p-6 w-full grid grid-cols-1 lg:grid-cols-3 gap-2`}
                 >
                   <div className='col-span-1 flex items-center justify-center'>
                     <img
@@ -99,11 +99,11 @@ export default function ListPinjam() {
               ))}
             </div>
           </div>
-          <div className='w-5/12'>
+          <div className='w-full lg:w-5/12'>
             <p className='font-sans font-bold text-xl'>Profil Pemilik</p>
             <div className={`${open ? "block" : "hidden"} mt-8`}>
               <div className='box p-4'>
-                <div className='flex space-x-2'>
+                <div className='flex justify-center items-center flex-col lg:flex-row space-y-2 space-x-2'>
                   <img className='h-20 w-20' src='/images/profil.png' />
                   <div className='space-y-2'>
                     <p className='font-sans text-xl font-bold'>
