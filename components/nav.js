@@ -28,6 +28,14 @@ export default function Nav() {
         text: "Pinjam Barang",
         href: "/pinjam-barang",
       },
+      {
+        text: "List Pinjam",
+        href: "/list-pinjam",
+      },
+      {
+        text: "Barang Dipinjam",
+        href: "/barang-dipinjam",
+      },
     ],
     []
   );
