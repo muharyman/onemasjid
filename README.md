@@ -1,6 +1,6 @@
 # OneMasjid-website
 
-**Description**:  OneMasjid adalah website Sharing Asset berbasis Komunitas untuk saling pinjam-meminjam barang antar Masjid. Sebuah website yang digunakan untuk dkm masjid untuk meminjam barang kepada masjid lain untuk memenuhi kebutuhan suatu acara masjid dan untuk meminjamkan barang kepada masjid lain.
+**Description**:  OneMasjid adalah website Sharing Asset berbasis Komunitas untuk saling pinjam-meminjam barang antar Masjid. Sebuah website yang digunakan dkm masjid untuk meminjam barang kepada masjid lain untuk memenuhi kebutuhan suatu acara masjid dan untuk meminjamkan barang kepada masjid lain.
 
 Masalah yang diselesaikan OneMasjid:
 * Tidak adanya kelengkapan barang yang dibutuhkan masjid untuk acara-acara sesaat
