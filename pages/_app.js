@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { GraphQLClient } from "graphql-request";
-import { useMemo } from "react";
 import { AppProvider } from "../context/appContext";
 import "../styles/index.css";
 import Nav from "../components/nav";
@@ -14,21 +13,23 @@ function MyApp({ Component, pageProps }) {
       : Boolean(localStorage.getItem("one_masjid"))
   );
 
-  const client = useMemo(() => {
-    if (typeof window === "undefined") {
-      return {};
-    } else {
-      let headers = {};
-      if (auth) {
-        headers = {
-          Authorization: `Bearer ${localStorage.getItem("one_masjid")}`,
-        };
-      }
-      return new GraphQLClient("https://evolved-imp-15.hasura.app/v1/graphql", {
-        headers,
-      });
-    }
-  }, [auth]);
+  // const client = useMemo(() => {
+  //   if (typeof window === "undefined") {
+  //     return {};
+  //   } else {
+  //     let headers = {};
+  //     if (auth) {
+  //       headers = {
+  //         Authorization: `Bearer ${localStorage.getItem("one_masjid")}`,
+  //       };
+  //     }
+  //     return new GraphQLClient("https://evolved-imp-15.hasura.app/v1/graphql", {
+  //       headers,
+  //     });
+  //   }
+  // }, [auth]);
+
+  const client = React.useMemo(() => ["a"], []);
   return (
     <div>
       <AppProvider value={{ client, auth, setAuth }}>

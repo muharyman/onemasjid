@@ -3,7 +3,7 @@ import React from "react";
 export default function Card(props) {
   return (
     <React.Fragment>
-      <div className='box p-6 w-full flex flex-col justify-center'>
+      <div className='cursor-pointer box p-6 w-full flex flex-col justify-center'>
         <img src={props.gambar_barang} alt='example' />
         <p className='font-sans text-black opacity-50 text-center'>
           {props.alamat}
