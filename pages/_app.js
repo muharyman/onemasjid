@@ -13,23 +13,17 @@ function MyApp({ Component, pageProps }) {
       : Boolean(localStorage.getItem("one_masjid"))
   );
 
-  // const client = useMemo(() => {
-  //   if (typeof window === "undefined") {
-  //     return {};
-  //   } else {
-  //     let headers = {};
-  //     if (auth) {
-  //       headers = {
-  //         Authorization: `Bearer ${localStorage.getItem("one_masjid")}`,
-  //       };
-  //     }
-  //     return new GraphQLClient("https://evolved-imp-15.hasura.app/v1/graphql", {
-  //       headers,
-  //     });
-  //   }
-  // }, [auth]);
+  const client = React.useMemo(() => {
+    return new GraphQLClient(
+      process.env.HASURA_URL || "https://evolved-imp-15.hasura.app/v1/graphql",
+      {
+        headers: {
+          "x-hasura-admin-secret": "admin",
+        },
+      }
+    );
+  }, [auth]);
 
-  const client = React.useMemo(() => ["a"], []);
   return (
     <div>
       <AppProvider value={{ client, auth, setAuth }}>

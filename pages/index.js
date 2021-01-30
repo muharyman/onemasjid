@@ -79,24 +79,24 @@ export default function IndexPage() {
     []
   );
 
-  // const fetchData = React.useCallback(async () => {
-  //   const query = gql`
-  //     query Myquery {
-  //       user {
-  //         nama_depan
-  //         nama_belakang
-  //         email
-  //         passowrd
-  //       }
-  //     }
-  //   `;
-  //   const { user } = await client.request(query);
-  //   console.log(user);
-  // }, [client]);
+  const fetchData = React.useCallback(async () => {
+    const query = gql`
+      query Myquery {
+        user {
+          nama_depan
+          nama_belakang
+          email
+          password
+        }
+      }
+    `;
+    const { user } = await client.request(query);
+    console.log(user);
+  }, [client]);
 
-  // React.useEffect(() => {
-  //   fetchData();
-  // }, [client]);
+  React.useEffect(() => {
+    fetchData();
+  }, [client]);
 
   const toDetail = React.useCallback((id) => {
     router.push(`/pinjam-barang/${id}`);
